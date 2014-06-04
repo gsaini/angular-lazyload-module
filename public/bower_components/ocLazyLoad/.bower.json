@@ -1,0 +1,34 @@
+{
+  "name": "ocLazyLoad",
+  "main": "ocLazyLoad.min.js",
+  "version": "0.0.3",
+  "homepage": "https://github.com/ocombe/ocLazyLoad",
+  "authors": [
+    "Olivier Combe <olivier.combe@gmail.com>"
+  ],
+  "description": "Load modules on demand (lazy load) with angularJS",
+  "keywords": [
+    "lazy load",
+    "lazy-load",
+    "load on demand",
+    "module",
+    "angular",
+    "angularJS"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "_release": "0.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.3",
+    "commit": "6a959f0e73918e522a838a3e878476ec84dbaa27"
+  },
+  "_source": "git://github.com/ocombe/ocLazyLoad.git",
+  "_target": "~0.0.3",
+  "_originalSource": "ocLazyLoad",
+  "_direct": true
+}

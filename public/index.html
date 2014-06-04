@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script data-main="modules/main" src="bower_components/requirejs/require.js"></script>
+</head>
+
+<body id="app" class="container">
+	<header class="header" ng-include="'modules/common/partials/header.html'"></header>
+
+    <div ng-view ng-cloak></div>
+</body>
+</html>

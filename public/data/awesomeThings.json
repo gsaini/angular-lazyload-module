@@ -1,0 +1,8 @@
+{
+	"success":true,
+	"data":{
+		"awesomeThings":["Angularjs", "Requirejs", "HTML5"]
+	},
+	"messageType":"",
+	"message":""
+}

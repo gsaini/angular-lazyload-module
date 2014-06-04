@@ -1,0 +1,23 @@
+{
+  "name": "angular-lazyload",
+  "version": "0.0.0",
+  "authors": [
+    "gsaini <gopal.saini.work@gmail.com>"
+  ],
+  "description": "angular application for modules lazy loading",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+	  "angular": "~1.2.0",
+	  "angular-route": "~1.2.0",
+    "requirejs": "~2.1.11",
+    "ocLazyLoad": "~0.0.3"
+  }
+}
