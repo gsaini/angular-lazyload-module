@@ -1,0 +1,1 @@
+define(["angular"],function(e){var t=function(e){var t=this;t.load=function(t,n){return e.load({name:t,files:[n]})}};return["$ocLazyLoad",t]});

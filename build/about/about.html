@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <h1>About</h1>
+  <p class="lead">
+    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
+    Always a pleasure scaffolding your apps.
+  </p>
+  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
+</div>
+
+<p>{{status}}</p>
+<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+  <button class='btn btn-default' ng-click="addAlert()">Add Alert</button>
+<div class="row marketing">
+  <h4 ng-repeat="thing in awesomeThings">{{thing.message}}</h4>  
+</div>
+
+<div class="footer">
+  <p>♥ from the Yeoman team</p>
+</div>

@@ -1,0 +1,1 @@
+define(["angular","angularRoute","ocLazyLoad","controller","service","bootstrapService","routeManager","bootstrap"],function(e,t,n,r,i,s,o,u){var a=e.module("appModule",["ngRoute","oc.lazyLoad","ui.bootstrap"]);return a.controller("ApplicationController",r).service("LoadService",i).service("ModalService",s.modalService).config(o),a});

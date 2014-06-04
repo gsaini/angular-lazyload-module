@@ -14,14 +14,14 @@ module.exports = function(grunt) {
             compile: {
                 options: {
                     dir: "build",
-					removeCombined: true,
-					mainConfigFile:'public/modules/main.js'
+                    removeCombined: true,
+                    mainConfigFile: 'public/scripts/main.js'
                 }
             }
         },
         bower: {
             target: {
-                rjsConfig: 'public/modules/main.js',
+                rjsConfig: 'public/scripts/main.js',
                 options: {
                     baseUrl: 'public/'
                 }
