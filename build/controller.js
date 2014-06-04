@@ -1,1 +1,0 @@
-define(["angular"],function(e){var t=["$scope","$location",function(e,t){}];return t});

@@ -1,1 +1,0 @@
-define(["angular"],function(e){var t=["$modal",function(e){return{showStatusModal:function(t,n){return e.open({template:'<div><div class="modal-header"><h3>'+t+'</h3></div><div class="modal-body">'+n+'</div><div class="modal-footer cta-container"><button class="btn btn-primary" ng-click="$close({ok:true})">OK</button></div></div>'})}}}];return{modalService:t}});
