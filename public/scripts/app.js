@@ -16,10 +16,10 @@ define([
         'ui.bootstrap'
     ]);
 
-    app.controller('ApplicationController', controller);
-    app.service('LoadService', service);
-    app.service('ModalService', bootstrapService.modalService);
-    app.config(routeManager);
+    app.controller('ApplicationController', controller)
+        .service('LoadService', service)
+        .service('ModalService', bootstrapService.modalService)
+        .config(routeManager);
 
     return app;
 });

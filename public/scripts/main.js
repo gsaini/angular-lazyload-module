@@ -16,19 +16,18 @@ require.config({
 
         bootstrapService: 'common/services/bootstrap'
     },
-	modules: [{
-		name: "home/main",
-		exclude:['angular']
-	},{
-		name:"about/main",
-		exclude:["angular"]
-	},
-	{
-		name:"contact/main",
-		exclude:["angular"]
-	}],
+    modules: [{
+        name: "home/main",
+        exclude: ['angular']
+    }, {
+        name: "about/main",
+        exclude: ["angular"]
+    }, {
+        name: "contact/main",
+        exclude: ["angular"]
+    }],
     deps: ['angular', 'app'],
     callback: function(angular, app) {
-        angular.bootstrap(document.getElementById('app'), ['appModule']);
+        angular.bootstrap(document.getElementsByTagName('body'), ['appModule']);
     }
 });

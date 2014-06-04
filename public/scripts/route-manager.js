@@ -28,24 +28,24 @@ define([
 
             $routeProvider
                 .when('/home', {
-                    templateUrl: 'modules/home/home.html',
+                    templateUrl: 'scripts/home/home.html',
                     controller: 'HomeController',
                     resolve: {
-                        load: loadModule('home', 'home/main')
+                        deps: loadModule('home', 'home/main')
                     }
                 })
                 .when('/about', {
-                    templateUrl: 'modules/about/about.html',
+                    templateUrl: 'scripts/about/about.html',
                     controller: 'AboutController',
                     resolve: {
-                        load: loadModule('about', 'about/main')
+                        deps: loadModule('about', 'about/main')
                     }
                 })
                 .when('/contact', {
-                    templateUrl: 'modules/contact/contact.html',
+                    templateUrl: 'scripts/contact/contact.html',
                     controller: 'ContactController',
                     resolve: {
-                        load: loadModule('contact', 'contact/main')
+                        deps: loadModule('contact', 'contact/main')
                     }
                 })
                 .otherwise({
