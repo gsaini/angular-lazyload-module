@@ -35,7 +35,7 @@ define([
                             templateUrl: 'scripts/common/partials/header.html'
                         },
                         '': {
-                            template: '<div ui-view ng-cloak></div>'
+                            template: '<ui-view/>'
                         }
                     },
                     resolve: {

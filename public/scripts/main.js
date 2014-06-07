@@ -25,6 +25,8 @@ require.config({
     }, {
         name: "contact/main",
         exclude: ["angular"]
+    }, {
+        name: 'main'
     }],
     deps: ['angular', 'app'],
     callback: function(angular, app) {

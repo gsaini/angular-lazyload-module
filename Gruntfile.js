@@ -21,12 +21,10 @@ module.exports = function(grunt) {
         },
         bower: {
             target: {
-                rjsConfig: 'public/scripts/main.js',
-                options: {
-                    baseUrl: 'public/'
-                }
+                rjsConfig: 'public/scripts/main.js'
             }
         }
     });
+
     grunt.registerTask('build', ['requirejs']);
 };
