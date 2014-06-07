@@ -12,17 +12,7 @@ define([
             var self = this;
 
             $rootScope.pageTitle = 'about';
-
-            /**
-             * [pageLoad description]
-             * @return {[type]} [description]
-             */
-            self.pageLoad = function() {
-                aboutService.getAwesomeThings().success(function(response) {
-                    if (response.success) $scope.awesomeThings = response.data;
-                });
-            };
-
+            $scope.about = aboutService;
             $scope.status = otherService.getStatus();
 
             $scope.alerts = [{
@@ -47,8 +37,6 @@ define([
             $scope.closeAlert = function(index) {
                 $scope.alerts.splice(index, 1);
             };
-
-            self.pageLoad();
         }
     ];
 

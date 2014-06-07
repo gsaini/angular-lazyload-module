@@ -7,8 +7,7 @@
 </head>
 
 <body class="container">
-	<header class="header" ng-include="'scripts/common/partials/header.html'"></header>
-
-    <section ng-view ng-cloak></section>
+	<header class="header" ui-view="header"></header>
+    <section ui-view></section>
 </body>
 </html>

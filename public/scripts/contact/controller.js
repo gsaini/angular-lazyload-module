@@ -11,18 +11,7 @@ define(['angular'], function(angular) {
             var self = this;
 
             $rootScope.pageTitle = 'contact';
-
-            /**
-             * [pageLoad description]
-             * @return {[type]} [description]
-             */
-            self.pageLoad = function() {
-                contactService.getContacts().success(function(response) {
-                    $scope.contacts = response.data;
-                });
-            };
-
-            self.pageLoad();
+            $scope.data = contactService;
         }
     ];
 

@@ -7,16 +7,29 @@ define([
      * [aboutService description]
      * @type {Array}
      */
-    var aboutService = ['$http',
-        function($http) {
-            return {
-                /**
-                 * [getAwesomeThings description]
-                 * @return {[type]} [description]
-                 */
-                getAwesomeThings: function() {
-                    return $http.get('data/about.json');
-                }
+    var aboutService = ['$http', '$q',
+        function($http, $q) {
+            var self = this;
+
+            /**
+             * [get description]
+             * @return {[type]} [description]
+             */
+            self.get = function() {
+                var deferred = $q.defer();
+                self.getAwesomeThings().success(function(response) {
+                    self.awesomeThings = response.data;
+                    deferred.resolve();
+                });
+                return deferred.promise;
+            };
+
+            /**
+             * [getAwesomeThings description]
+             * @return {[type]} [description]
+             */
+            self.getAwesomeThings = function() {
+                return $http.get('data/about.json');
             };
         }
     ];

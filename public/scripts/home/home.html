@@ -7,10 +7,10 @@
   <p><a class="btn btn-lg btn-success" href ng-click="modal()">Splendid!</a></p>
 </div>
 
-<div class="row marketing" ng-repeat="thing in awesomeThings">
-  <h4>{{thing.header}}</h4>
+<div class="row marketing" ng-repeat="awesomeThing in home.awesomeThings">
+  <h4>{{awesomeThing.header}}</h4>
   <p>
-    {{thing.message}}
+    {{awesomeThing.message}}
   </p>
 </div>
 

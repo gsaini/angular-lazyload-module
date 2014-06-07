@@ -7,7 +7,7 @@ define([
 
     var homeModule = angular.module('home', [])
         .controller('HomeController', controller)
-        .factory('HomeService', service);
+        .service('HomeService', service);
 
     return homeModule;
 });

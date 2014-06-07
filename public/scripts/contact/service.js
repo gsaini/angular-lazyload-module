@@ -8,17 +8,31 @@ define([
      * [contactService description]
      * @type {Array}
      */
-    var contactService = ['$http',
-        function($http) {
-            return {
-                /**
-                 * [getContacts description]
-                 * @return {[type]} [description]
-                 */
-                getContacts: function() {
-                    return $http.get('data/contacts.json');
-                }
+    var contactService = ['$http', '$q',
+        function($http, $q) {
+            var self = this;
+
+            /**
+             * [get description]
+             * @return {[type]} [description]
+             */
+            self.get = function() {
+                var deferred = $q.defer();
+                self.getContacts().success(function(response) {
+                    self.contacts = response.data;
+                    deferred.resolve();
+                });
+                return deferred.promise;
             };
+
+            /**
+             * [getContacts description]
+             * @return {[type]} [description]
+             */
+            self.getContacts = function() {
+                return $http.get('data/contacts.json');
+            };
+
         }
     ];
 

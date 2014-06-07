@@ -1,17 +1,17 @@
 define([
     'angular',
-    'angularRoute',
+    'angular-ui-router',
     'ocLazyLoad',
     'controller',
     'service',
     'bootstrapService',
     'routeManager',
     'bootstrap'
-], function(angular, angularRoute, ocLazyLoad, controller, service, bootstrapService, routeManager, bootstrap) {
+], function(angular, uiRouter, ocLazyLoad, controller, service, bootstrapService, routeManager, bootstrap) {
     'use strict';
 
     var app = angular.module('appModule', [
-        'ngRoute',
+        'ui.router',
         'oc.lazyLoad',
         'ui.bootstrap'
     ]);
