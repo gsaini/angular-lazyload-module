@@ -1,13 +1,12 @@
 define([
-    'angular'
-], function(angular) {
+    'angular',
+    './module',
+    './service',
+    'common/directives/test'
+], function(angular, lazyModule, service, testDirective) {
     'use strict';
 
-    /**
-     * [aboutController description]
-     * @type {Array}
-     */
-    var aboutController = ["$scope", '$rootScope', 'AboutService', 'OtherService',
+    lazyModule.controller('AboutController', ["$scope", '$rootScope', 'AboutService', 'OtherService',
         function($scope, $rootScope, aboutService, otherService) {
             var self = this;
 
@@ -38,7 +37,5 @@ define([
                 $scope.alerts.splice(index, 1);
             };
         }
-    ];
-
-    return aboutController;
+    ]);
 });

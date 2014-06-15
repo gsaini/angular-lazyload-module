@@ -1,13 +1,11 @@
 define([
-    'angular'
-], function(angular) {
+    'angular',
+    '../module'
+], function(angular, lazyModule) {
     'use strict';
 
-    /**
-     * [modalService description]
-     * @type {Array}
-     */
-    var modalService = ['$modal',
+    lazyModule.lazy.service('ModalService', [
+        '$modal',
         function($modal) {
             return {
                 /**
@@ -23,9 +21,5 @@ define([
                 }
             };
         }
-    ];
-
-    return {
-        modalService: modalService
-    };
+    ]);
 });

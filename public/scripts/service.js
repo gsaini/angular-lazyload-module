@@ -1,22 +1,15 @@
 define([
-    'angular'
-], function(angular) {
+    'angular',
+    './app'
+], function(angular, app) {
     'use strict';
-
-    /**
-     * [lazyLoadService description]
-     * @param  {[type]} $ocLazyLoadProvider [description]
-     * @return {[type]}                     [description]
-     */
-    var lazyLoadService = function($ocLazyLoad) {
-        var self = this;
-        self.load = function(moduleName, moduleUrl) {
-            return $ocLazyLoad.load({
-                name: moduleName,
-                files: [moduleUrl]
-            });
-        };
-    };
-
-    return ['$ocLazyLoad', lazyLoadService];
+    app.service('AppService', ['$http',
+        function($http) {
+            return {
+                getData: function() {
+                    return 'Service data';
+                }
+            };
+        }
+    ]);
 });

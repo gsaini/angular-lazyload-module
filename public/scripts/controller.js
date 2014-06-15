@@ -1,19 +1,13 @@
 define([
-    'angular'
-], function(angular) {
+    'angular',
+    './app',
+    './service'
+], function(angular, app, service) {
     'use strict';
 
-    /**
-     * [appController description]
-     * @type {Array}
-     */
-    var appController = ['$scope', '$location',
-        function($scope, $location) {
-            $scope.options = {
-                reload: true
-            };
+    app.controller('AppCtrl', ['$scope', 'AppService', '$log',
+        function($scope, appService, $log) {
+            $log.info(appService.getData());
         }
-    ];
-
-    return appController;
+    ]);
 });

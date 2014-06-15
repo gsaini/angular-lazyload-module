@@ -1,13 +1,10 @@
 define([
-    'angular'
-], function(angular) {
+    'angular',
+    './app'
+], function(angular, app) {
     'use strict';
 
-    /**
-     * [config description]
-     * @type {Array}
-     */
-    var config = ['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
+    app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
         function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
 
             $ocLazyLoadProvider.config({
@@ -20,10 +17,15 @@ define([
              * @param  {[type]} ModuleUrl  [description]
              * @return {[type]}            [description]
              */
-            var loadModule = function(moduleName, ModuleUrl) {
-                return ['LoadService', function(loadService) {
-                    return loadService.load(moduleName, ModuleUrl);
-                }];
+            var loadModule = function(moduleName, moduleUrl) {
+                return ['$ocLazyLoad',
+                    function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: moduleName,
+                            files: [moduleUrl]
+                        });
+                    }
+                ];
             };
 
             $stateProvider
@@ -32,17 +34,15 @@ define([
                     abstract: true,
                     views: {
                         header: {
-                            templateUrl: 'scripts/common/partials/header.html'
+                            templateUrl: 'scripts/common/components/header.html',
+                            controller: 'AppCtrl'
                         },
                         '': {
                             template: '<ui-view/>'
                         }
                     },
                     resolve: {
-                        reload: function() {
-                            console.info('reload');
-                            return true;
-                        }
+                        commonModule: loadModule('common', 'common/main')
                     }
                 })
                 .state('app.home', {
@@ -50,12 +50,16 @@ define([
                     templateUrl: 'scripts/home/home.html',
                     controller: 'HomeController',
                     resolve: {
-                        deps: loadModule('home', 'home/main'),
-                        awesomeThings: ['deps', 'HomeService',
+                        homeModule: loadModule('home', 'home/main'),
+                        awesomeThings: ['homeModule', 'HomeService',
                             function(deps, homeService) {
                                 return homeService.get();
                             }
-                        ]
+                        ],
+                        reload: function() {
+                            console.info('reload');
+                            return true;
+                        }
                     }
                 })
                 .state('app.about', {
@@ -63,9 +67,9 @@ define([
                     templateUrl: 'scripts/about/about.html',
                     controller: 'AboutController',
                     resolve: {
-                        deps: loadModule('about', 'about/main'),
-                        awesomeThings: ['deps', 'AboutService',
-                            function(deps, aboutService) {
+                        aboutModule: loadModule('about', 'about/main'),
+                        awesomeThings: ['aboutModule', 'AboutService',
+                            function(aboutModule, aboutService) {
                                 return aboutService.get();
                             }
                         ]
@@ -76,19 +80,16 @@ define([
                     templateUrl: 'scripts/contact/contact.html',
                     controller: 'ContactController',
                     resolve: {
-                        deps: loadModule('contact', 'contact/main'),
-                        contacts: ['deps', 'ContactService',
-                            function(deps, contactService) {
+                        contactModule: loadModule('contact', 'contact/main'),
+                        contacts: ['contactModule', 'ContactService',
+                            function(contactModule, contactService) {
                                 return contactService.get();
                             }
                         ]
                     }
                 });
-
             $urlRouterProvider.otherwise('/app');
-            $urlRouterProvider.when('/app', '/app/home');
         }
-    ];
+    ]);
 
-    return config;
 });

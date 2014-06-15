@@ -1,59 +1,47 @@
 define([
-    'angular'
-], function(angular) {
+    'angular',
+    './module'
+], function(angular, lazyModule) {
     'use strict';
 
-    /**
-     * [aboutService description]
-     * @type {Array}
-     */
-    var aboutService = ['$http', '$q',
-        function($http, $q) {
-            var self = this;
+    lazyModule
+        .service('AboutService', ['$http', '$q',
+            function($http, $q) {
+                var self = this;
 
-            /**
-             * [get description]
-             * @return {[type]} [description]
-             */
-            self.get = function() {
-                var deferred = $q.defer();
-                self.getAwesomeThings().success(function(response) {
-                    self.awesomeThings = response.data;
-                    deferred.resolve();
-                });
-                return deferred.promise;
-            };
-
-            /**
-             * [getAwesomeThings description]
-             * @return {[type]} [description]
-             */
-            self.getAwesomeThings = function() {
-                return $http.get('data/about.json');
-            };
-        }
-    ];
-
-    /**
-     * [otherService description]
-     * @type {Array}
-     */
-    var otherService = ['$http',
-        function($http) {
-            return {
                 /**
-                 * [getStatus description]
+                 * [get description]
                  * @return {[type]} [description]
                  */
-                getStatus: function() {
-                    return 'active';
-                }
-            };
-        }
-    ];
+                self.get = function() {
+                    var deferred = $q.defer();
+                    self.getAwesomeThings().success(function(response) {
+                        self.awesomeThings = response.data;
+                        deferred.resolve();
+                    });
+                    return deferred.promise;
+                };
 
-    return {
-        aboutService: aboutService,
-        otherService: otherService
-    };
+                /**
+                 * [getAwesomeThings description]
+                 * @return {[type]} [description]
+                 */
+                self.getAwesomeThings = function() {
+                    return $http.get('data/about.json');
+                };
+            }
+        ])
+        .service('OtherService', ['$http',
+            function($http) {
+                return {
+                    /**
+                     * [getStatus description]
+                     * @return {[type]} [description]
+                     */
+                    getStatus: function() {
+                        return 'active';
+                    }
+                };
+            }
+        ]);
 });

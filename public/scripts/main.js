@@ -1,7 +1,7 @@
 require.config({
     shim: {
         angular: {
-            exports: "angular"
+            exports: 'angular'
         },
         ocLazyLoad: ['angular'],
         bootstrap: ['angular'],
@@ -13,23 +13,29 @@ require.config({
         ocLazyLoad: '../bower_components/ocLazyLoad/ocLazyLoad',
         bootstrap: '../bower_components/angular-bootstrap/ui-bootstrap-tpls.min',
         routeManager: 'route-manager',
-
+        services: 'common/services',
+        directives: 'common/directives',
         bootstrapService: 'common/services/bootstrap'
     },
+    packages: ['services', 'directives'],
     modules: [{
-        name: "home/main",
+        name: 'common/main',
+        include: ['services', 'directives'],
         exclude: ['angular']
     }, {
-        name: "about/main",
-        exclude: ["angular"]
+        name: 'home/main',
+        exclude: ['angular', 'services', 'directives']
     }, {
-        name: "contact/main",
-        exclude: ["angular"]
+        name: 'about/main',
+        exclude: ['angular', 'services', 'directives']
+    }, {
+        name: 'contact/main',
+        exclude: ['angular', 'services', 'directives']
     }, {
         name: 'main'
     }],
-    deps: ['angular', 'app'],
-    callback: function(angular, app) {
-        angular.bootstrap(document.getElementsByTagName('body'), ['appModule']);
+    deps: ['angular', 'app', 'routeManager', './controller'],
+    callback: function(angular, app, routeManager, controller) {
+        angular.bootstrap(document, ['appModule']);
     }
 });
