@@ -1,6 +1,6 @@
 define([
     'angular',
-    '../module'
+    'common/module'
 ], function(angular, lazyModule) {
     'use strict';
 

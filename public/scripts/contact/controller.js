@@ -2,7 +2,7 @@ define([
     'angular',
     './module',
     './service',
-    'common/services/bootstrap'
+    'services/bootstrap'
 ], function(angular, lazyModule, service, bootstrapService) {
     'use strict';
 

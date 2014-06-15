@@ -14,8 +14,7 @@ require.config({
         bootstrap: '../bower_components/angular-bootstrap/ui-bootstrap-tpls.min',
         routeManager: 'route-manager',
         services: 'common/services',
-        directives: 'common/directives',
-        bootstrapService: 'common/services/bootstrap'
+        directives: 'common/directives'
     },
     packages: ['services', 'directives'],
     modules: [{
