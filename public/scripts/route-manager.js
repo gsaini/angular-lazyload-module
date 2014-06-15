@@ -48,7 +48,7 @@ define([
                 .state('app.home', {
                     url: '',
                     templateUrl: 'scripts/home/home.html',
-                    controller: 'HomeController',
+                    controller: 'HomeCtrl',
                     resolve: {
                         homeModule: loadModule('home', 'home/main'),
                         awesomeThings: ['homeModule', 'HomeService',
@@ -65,7 +65,7 @@ define([
                 .state('app.about', {
                     url: '/about',
                     templateUrl: 'scripts/about/about.html',
-                    controller: 'AboutController',
+                    controller: 'AboutCtrl',
                     resolve: {
                         aboutModule: loadModule('about', 'about/main'),
                         awesomeThings: ['aboutModule', 'AboutService',
@@ -78,7 +78,7 @@ define([
                 .state('app.contact', {
                     url: '/contact',
                     templateUrl: 'scripts/contact/contact.html',
-                    controller: 'ContactController',
+                    controller: 'ContactCtrl',
                     resolve: {
                         contactModule: loadModule('contact', 'contact/main'),
                         contacts: ['contactModule', 'ContactService',

@@ -6,7 +6,7 @@ define([
 ], function(angular, lazyModule, service, testDirective) {
     'use strict';
 
-    lazyModule.controller('AboutController', ["$scope", '$rootScope', 'AboutService', 'OtherService',
+    lazyModule.controller('AboutCtrl', ["$scope", '$rootScope', 'AboutService', 'OtherService',
         function($scope, $rootScope, aboutService, otherService) {
             var self = this;
 

@@ -6,7 +6,7 @@ define([
 ], function(angular, lazyModule, service, bootstrapService) {
     'use strict';
 
-    lazyModule.controller('ContactController', ['$scope', '$rootScope', 'ContactService', 'ModalService',
+    lazyModule.controller('ContactCtrl', ['$scope', '$rootScope', 'ContactService', 'ModalService',
         function($scope, $rootScope, contactService, modalService) {
             var self = this;
 
