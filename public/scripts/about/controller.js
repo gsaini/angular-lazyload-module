@@ -2,7 +2,7 @@ define([
     'angular',
     './module',
     './service',
-    'common/directives/test'
+    'directives/test'
 ], function(angular, lazyModule, service, testDirective) {
     'use strict';
 

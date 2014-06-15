@@ -50,7 +50,14 @@ define([
                     templateUrl: 'scripts/home/home.html',
                     controller: 'HomeCtrl',
                     resolve: {
-                        homeModule: loadModule('home', 'home/main'),
+                        homeModule: ['commonModule', '$ocLazyLoad',
+                            function(commonModule, $ocLazyLoad) {
+                                return $ocLazyLoad.load({
+                                    name: 'home',
+                                    files: ['home/main']
+                                });
+                            }
+                        ],
                         awesomeThings: ['homeModule', 'HomeService',
                             function(deps, homeService) {
                                 return homeService.get();
@@ -67,7 +74,14 @@ define([
                     templateUrl: 'scripts/about/about.html',
                     controller: 'AboutCtrl',
                     resolve: {
-                        aboutModule: loadModule('about', 'about/main'),
+                        aboutModule: ['commonModule', '$ocLazyLoad',
+                            function(commonModule, $ocLazyLoad) {
+                                return $ocLazyLoad.load({
+                                    name: 'about',
+                                    files: ['about/main']
+                                });
+                            }
+                        ],
                         awesomeThings: ['aboutModule', 'AboutService',
                             function(aboutModule, aboutService) {
                                 return aboutService.get();
@@ -80,7 +94,14 @@ define([
                     templateUrl: 'scripts/contact/contact.html',
                     controller: 'ContactCtrl',
                     resolve: {
-                        contactModule: loadModule('contact', 'contact/main'),
+                        contactModule: ['commonModule', '$ocLazyLoad',
+                            function(commonModule, $ocLazyLoad) {
+                                return $ocLazyLoad.load({
+                                    name: 'contact',
+                                    files: ['contact/main']
+                                });
+                            }
+                        ],
                         contacts: ['contactModule', 'ContactService',
                             function(contactModule, contactService) {
                                 return contactService.get();
