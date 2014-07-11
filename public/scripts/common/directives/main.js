@@ -1,5 +1,5 @@
 define([
-    './test'
+    './directive'
 ], function() {
     'use strict';
 
