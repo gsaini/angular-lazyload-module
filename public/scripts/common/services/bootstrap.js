@@ -4,7 +4,7 @@ define([
 ], function(angular, lazyModule) {
     'use strict';
 
-    lazyModule.lazy.service('ModalService', [
+    lazyModule.service('ModalService', [
         '$modal',
         function($modal) {
             return {

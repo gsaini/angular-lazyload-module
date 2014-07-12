@@ -4,7 +4,7 @@ define([
 ], function(angular, lazyModule) {
     'use strict';
 
-    lazyModule.lazy.directive('testDirective', ['$window',
+    lazyModule.directive('testDirective', ['$window',
         function($window) {
             return {
                 restrict: 'A',

@@ -3,7 +3,8 @@ define([
     'angular-ui-router',
     'angular-translate',
     'ocLazyLoad',
-    'bootstrap'
+    'bootstrap',
+    'common/main'
 ], function(angular, uiRoute, ocLazyLoad, bootstrap) {
     'use strict';
 
@@ -11,7 +12,8 @@ define([
         'ui.router',
         'pascalprecht.translate',
         'oc.lazyLoad',
-        'ui.bootstrap'
+        'ui.bootstrap',
+        'common'
     ]);
 
     app.config([

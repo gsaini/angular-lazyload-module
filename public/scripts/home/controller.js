@@ -6,8 +6,8 @@ define([
 ], function(angular, lazyModule, service, bootstrapService) {
     'use strict';
 
-    lazyModule.controller('HomeCtrl', ['$scope', '$modal', '$rootScope', 'HomeService', 'ModalService',
-        function($scope, $modal, $rootScope, homeService, modalService) {
+    lazyModule.controller('HomeCtrl', ['$scope', '$rootScope', 'HomeService', 'ModalService',
+        function($scope, $rootScope, homeService, modalService) {
 
             $rootScope.pageTitle = 'home';
             $scope.home = homeService;

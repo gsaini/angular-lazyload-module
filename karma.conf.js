@@ -15,23 +15,23 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [{
-                pattern: 'public/bower_components/**/*.js',
-                included: false
-            }, {
                 pattern: 'public/scripts/**/*.js',
                 included: false
             }, {
-                pattern: 'test/*-spec.js',
+                pattern: 'test/spec/**/*-spec.js',
+                included: false
+            }, {
+                pattern: 'public/bower_components/**/*.js',
                 included: false
             },
 
-            'test/test-main.js'
+            'test/spec/test.config.js'
         ],
 
 
         // list of files to exclude
         exclude: [
-            'public/script/main.js'
+            'public/scripts/main.js'
         ],
 
 
