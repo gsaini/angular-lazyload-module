@@ -21,11 +21,28 @@ require.config({
         'angular-ui-router': 'public/bower_components/angular-ui-router/release/angular-ui-router',
         ocLazyLoad: 'public/bower_components/ocLazyLoad/ocLazyLoad',
         bootstrap: 'public/bower_components/angular-bootstrap/ui-bootstrap-tpls.min',
-
-        routeManager: 'public/scripts/route-manager',
-        services: 'public/scripts/common/services',
-        directives: 'public/scripts/common/directives'
+        services: 'common/services',
+        directives: 'common/directives'
     },
+
+    packages: ['services', 'directives'],
+    modules: [{
+        name: 'common/main',
+        include: ['services', 'directives'],
+        exclude: ['angular']
+    }, {
+        name: 'home/main',
+        exclude: ['angular', 'services', 'directives']
+    }, {
+        name: 'about/main',
+        exclude: ['angular', 'services', 'directives']
+    }, {
+        name: 'contact/main',
+        exclude: ['angular', 'services', 'directives']
+    }, {
+        name: 'main'
+    }],
+
 
     // dynamically load all test files
     deps: allTestFiles,
