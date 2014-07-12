@@ -5,11 +5,13 @@ require.config({
         },
         ocLazyLoad: ['angular'],
         bootstrap: ['angular'],
-        'angular-ui-router': ['angular']
+        'angular-ui-router': ['angular'],
+        'angular-translate': ['angular']
     },
     paths: {
         angular: '../bower_components/angular/angular',
         'angular-ui-router': '../bower_components/angular-ui-router/release/angular-ui-router',
+        'angular-translate': '../bower_components/angular-translate/angular-translate',
         ocLazyLoad: '../bower_components/ocLazyLoad/ocLazyLoad',
         bootstrap: '../bower_components/angular-bootstrap/ui-bootstrap-tpls.min',
         routeManager: 'route-manager',
