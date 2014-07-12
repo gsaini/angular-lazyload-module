@@ -62,5 +62,11 @@ define([
             spyOn(_HomeService, 'getAwesomeThings').andCallThrough();
         });
 
+        /*TEST BLOCK: To Check is ModalService is working*/
+        it('Should have injected ModalService service.', function() {
+            expect(_ModalService).toBeDefined();
+            spyOn(_ModalService, 'showStatusModal').andCallThrough();
+        });
+
     });
 });
