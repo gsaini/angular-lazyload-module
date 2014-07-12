@@ -1,5 +1,8 @@
 angular-lazyload-module
 ================
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+
+Load modules on demand(lazy load) by using RequireJS in AngularJS
 
 ## Getting Started
 ```
@@ -9,9 +12,6 @@ bower install
 ```
 npm install
 ```
-
-### Overview
-
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
