@@ -8,7 +8,7 @@ define([
 ], function(angular, uiRoute, ocLazyLoad, bootstrap) {
     'use strict';
 
-    var app = angular.module('appModule', [
+    var app = angular.module('app', [
         'ui.router',
         'pascalprecht.translate',
         'oc.lazyLoad',

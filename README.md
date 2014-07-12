@@ -13,6 +13,11 @@ bower install
 npm install
 ```
 
+To check unit test cases..
+```
+karma start
+```
+
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 

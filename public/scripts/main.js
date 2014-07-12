@@ -14,7 +14,6 @@ require.config({
         'angular-translate': '../bower_components/angular-translate/angular-translate',
         ocLazyLoad: '../bower_components/ocLazyLoad/ocLazyLoad',
         bootstrap: '../bower_components/angular-bootstrap/ui-bootstrap-tpls.min',
-        routeManager: 'route-manager',
         services: 'common/services',
         directives: 'common/directives'
     },
@@ -35,8 +34,8 @@ require.config({
     }, {
         name: 'main'
     }],
-    deps: ['angular', 'app', 'routeManager', './controller'],
+    deps: ['angular', 'app', './states', './controller'],
     callback: function(angular, app, routeManager, controller) {
-        angular.bootstrap(document, ['appModule']);
+        angular.bootstrap(document, ['app']);
     }
 });
