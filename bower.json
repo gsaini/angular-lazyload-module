@@ -20,6 +20,11 @@
     "requirejs": "~2.1.11",
     "ocLazyLoad": "~0.0.3",
     "angular-mocks": "~1.2.20",
-    "angular-translate": "~2.2.0"
+    "angular-translate": "~2.2.0",
+    "ng-grid": "~2.0.11",
+    "ngActivityIndicator": "~0.1.5",
+    "angular-growl-v2": "~0.6.1",
+    "angular-animate": "~1.2.20",
+    "bootstrap": "~3.2.0"
   }
 }

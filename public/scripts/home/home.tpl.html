@@ -1,10 +1,13 @@
-<div class="jumbotron">
+<div class="jumbotron" style="position:relative;">
   <h1>Home</h1>
   <p class="lead">
     <img src="images/logo.png" height="90px" alt="I'm developer"><br>
     <h2>{{ 'HEADLINE' | translate }}</h2>
   </p>
   <p><a class="btn btn-lg btn-success" href ng-click="modal()">Splendid!</a></p>
+  <div class="loader">
+    <div ng-show="AILoading" class="ai-circled ai-indicator ai-dark-spin"></div>
+  </div>
 </div>
 
 <div class="row marketing" ng-repeat="awesomeThing in home.awesomeThings">

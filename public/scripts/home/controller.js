@@ -6,11 +6,16 @@ define([
 ], function(angular, lazyModule, service, bootstrapService) {
     'use strict';
 
-    lazyModule.controller('HomeCtrl', ['$scope', '$rootScope', 'HomeService', 'ModalService',
-        function($scope, $rootScope, homeService, modalService) {
+    lazyModule.controller('HomeCtrl', ['$scope', '$rootScope', '$activityIndicator', '$timeout', 'HomeService', 'ModalService',
+        function($scope, $rootScope, $activityIndicator, $timeout, homeService, modalService) {
 
             $rootScope.pageTitle = 'home';
             $scope.home = homeService;
+
+            $activityIndicator.startAnimating();
+            $timeout(function() {
+                //$activityIndicator.stopAnimating();
+            }, 3000);
 
             /**
              * [modal description]

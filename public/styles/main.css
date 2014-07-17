@@ -51,6 +51,24 @@ body {
   padding: 14px 24px;
 }
 
+.loader{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent #000;
+  top: 0;
+  left: 0;
+}
+
+.loader .ai-circled, .ai-indicator, .ai-dark-spin{
+  left: 50%;
+  top: 50%;
+  margin-left: -32px;
+  margin-top: -32px;
+}
+
+
 /* Supporting marketing content */
 .marketing {
   margin: 40px 0;

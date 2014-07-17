@@ -11,6 +11,7 @@ define([
             var self = this;
 
             $rootScope.pageTitle = 'about';
+            $rootScope.isReload = true;
             $scope.about = aboutService;
             $scope.status = otherService.getStatus();
 
