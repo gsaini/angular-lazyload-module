@@ -7,10 +7,13 @@
   </p>
   <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
 </div>
+{{messages}}
+<h4 ng-repeat="message in messages">{{message}}</h4>  
 
-<div class="row marketing" ng-repeat="contact in data.contacts">
-  <h4>{{contact.name}}</h4> : {{contact.mobileNumber}}
-</div>
+<form id="chat-form" style="margin:10px;" ng-submit="sendMessage()">
+    <input id="message-textbox" ng-model="message" autocomplete="off" /><button style="margin-left:10px;">Send message</button>
+</form>
+
 
 <div class="footer">
   <p>♥ from the Yeoman team</p>

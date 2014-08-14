@@ -2,30 +2,33 @@ define([
     'angular',
     './module',
     './service',
-    'directives/directive'
+    'directives/directive',
+    './constants'
 ], function(angular, lazyModule, service, testDirective) {
     'use strict';
 
-    lazyModule.controller('AboutCtrl', ["$scope", '$rootScope', 'AboutService', 'OtherService',
-        function($scope, $rootScope, aboutService, otherService) {
-            var self = this;
+    lazyModule.controller('AboutCtrl', [
+        "$scope", 
+        '$rootScope', 
+        'AboutService', 
+        'OtherService',
+        'AboutConstants',
+        function($scope, $rootScope, aboutService, otherService, aboutConstants) {
+
+            $scope.messages = [];
+            $scope.alerts = [];
 
             $rootScope.pageTitle = 'about';
             $rootScope.isReload = true;
             $scope.about = aboutService;
-            $scope.status = otherService.getStatus();
-
-            $scope.alerts = [{
-                type: 'danger',
-                msg: 'Oh snap! Change a few things up and try submitting again.'
-            }];
+            $scope.status = otherService.getStatus();            
 
             /**
              * [addAlert description]
              */
             $scope.addAlert = function() {
                 $scope.alerts.push({
-                    msg: "Another alert!"
+                    msg: aboutConstants.messages.alertMsg
                 });
             };
 

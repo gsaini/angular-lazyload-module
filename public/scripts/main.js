@@ -3,6 +3,9 @@ require.config({
         angular: {
             exports: 'angular'
         },
+        'socketio': {
+            exports: 'io'
+        },
         ocLazyLoad: ['angular'],
         ngActivityIndicator: ['angular'],
         bootstrap: ['angular'],

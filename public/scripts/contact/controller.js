@@ -2,7 +2,7 @@ define([
     'angular',
     './module',
     './service',
-    'services/bootstrap'
+    'services/bootstrap',
 ], function(angular, lazyModule, service, bootstrapService) {
     'use strict';
 
@@ -23,7 +23,7 @@ define([
                 growl.error("This adds a error message");
             };
 
-            $timeout($scope.addSpecialWarnMessage, 2000);
+            $timeout($scope.addSpecialWarnMessage);
         }
     ]);
 });

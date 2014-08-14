@@ -11,7 +11,7 @@
 <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
   <button class='btn btn-default' ng-click="addAlert()">Add Alert</button>
 <div class="row marketing">
-  <h4 ng-repeat="awesomeThing in about.awesomeThings">{{awesomeThing.message}}</h4>  
+  <h4 ng-repeat="message in messages">{{message}}</h4>  
 </div>
 
 <div class="footer">
